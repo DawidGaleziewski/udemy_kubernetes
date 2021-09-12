@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-awesome-app-replicaset
+  labels:
+    app: myapp
+    type: replicaset
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 3
+  template:
+    metadata:
+      name: my-awesome-app
+      # labels need to be the same as in POD definition
+      labels:
+        app: myapp
+        type: redis
+    spec:
+      containers:
+        - name: redis-container
+          image: redis

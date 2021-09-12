@@ -42,6 +42,12 @@ in order to create a pod from a kubectl
 kubectl create -f pod-definition.yml
 ```
 
+if we want to update the definition file we can run on it:
+
+```bash
+kubectl apply -f ./file.yaml
+```
+
 we can see the pods with:
 
 kubectl get pods
